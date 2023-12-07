@@ -1081,44 +1081,6 @@ print('F1 Score :', f1_score(y_test,y_pred, average='macro'))
 
 """Berdasarkan evaluasi model, diperoleh akurasi dari model Random Forest Classifier sebesar 84% (0.838), yang menunjukkan hasil yang baik dan dapat dianggap akurat. Oleh karena itu, model ini dapat digunakan untuk melakukan penentuan kluster pengguna.
 
-- Melaksanakan prediksi untuk menentukan kluster
-"""
-
-print('--- PREDIKSI PENENTUAN CLUSTER PENGGUNA KARTU KREDIT MENGGUNAKAN RANDOM FOREST ---')
-print('='*100)
-
-saldo = float(input('Jumlah Saldo Pengguna (exp : 40.9321) = '))
-pembelian = float(input('Jumlah Pembelian yang Dilakukan Pengguna (exp : 16.0) = '))
-pembelianoneoff = float(input('Banyaknya Satu Kali Pembelian yang Dilakukan Pengguna (exp : 16.0) = '))
-pembelianangsuran = float(input('Jumlah Pembelian Angsuran yang Dilakukan Pengguna (exp : 95.0) = '))
-penarikantunai = float(input('Jumlah Penarikan Tunai yang Dilakukan Pengguna (exp : 205.23) = '))
-bataskredit = float(input('Jumlah Batas Kredit Pengguna (exp : 7000.0) = '))
-pembayaran = float(input('Jumlah Pembayaran yang Harus Dibayarkan Pengguna (exp : 312.87) = '))
-minimalpembayaran = float(input('Jumlah Minimal Pembayaran yang Harus Dibayarkan Pengguna (exp : 1072.87) = '))
-jangkawaktu = int(input('Jangka Waktu Pengguna Kredit (inputan : 6/7/8/9/10/11/12) = '))
-
-val = [saldo, pembelian, pembelianoneoff, pembelianangsuran, penarikantunai, bataskredit, pembayaran,
-       minimalpembayaran, jangkawaktu]
-print(val)
-
-predict_rfc = RFC.predict([val])
-print('='*100)
-print('Berdasarkan analisa, pengguna masuk kedalam cluster : ', predict_rfc)
-
-"""Dari hasil analisis, dapat diambil beberapa informasi mengenai pengguna berdasarkan data input yang diberikan:
-
-1. **Jumlah Saldo Pengguna:** 50.14328
-2. **Jumlah Pembelian yang Dilakukan Pengguna:** 24
-3. **Banyaknya Satu Kali Pembelian yang Dilakukan Pengguna:** 2
-4. **Jumlah Pembelian Angsuran yang Dilakukan Pengguna:** 86
-5. **Jumlah Penarikan Tunai yang Dilakukan Pengguna:** 109.09
-6. **Jumlah Batas Kredit Pengguna:** 7893
-7. **Jumlah Pembayaran yang Harus Dibayarkan Pengguna:** 345.9
-8. **Jumlah Minimal Pembayaran yang Harus Dibayarkan Pengguna:** 50
-9. **Jangka Waktu Pengguna Kredit:** 11
-
-Hasil analisis menunjukkan bahwa pengguna termasuk dalam kluster 'Pengguna dengan Pembelian dan Kredit Besar' berdasarkan pola dan karakteristik data yang dimasukkan.
-
 ## b. Save and Finalize Model
 
 Di sini, kami memanfaatkan operasi Pickle untuk menyimpan format serialisasi ke dalam suatu file dan kemudian menggunakannya untuk membuat prediksi baru.
