@@ -225,13 +225,6 @@ plt.show()
 
 """Dapat dilihat persebaran data jumlah pengguna dengan Jangka waktu layanan kartu kredit untuk pengguna 12 bulan sangat banyak dengan jumlah diatas 7000, sedangakan jumlah pengguna dengan Jangka waktu layanan kartu kredit untuk pengguna 9 - 11 bulan rata-rata ada diangka kurang dari 1000"""
 
-#Visualisasi top 5 jumlah pembelian tertinggi pengguna
-df_v = pd.DataFrame(df['Pembelian'].value_counts())
-plot = df_v.head().plot.pie(y='Pembelian', figsize=(8, 8), autopct='%1.0f%%');
-
-plt.title("Pie Chart Top 5 jumlah pembelian tertinggi pengguna")
-plt.show()
-
 """dapat dilihat bahwa 5 jumlah pembelian tertinggi pengguna diantaranya 0.0, 45.65, 150.0, 60.0, dan 200.0"""
 
 #Visualisasi boxplot perbandingan Jangka waktu layanan kartu kredit untuk pengguna dan Batas Kredit
